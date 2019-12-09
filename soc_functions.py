@@ -7,7 +7,7 @@ soc_port = 9999
 soc_url = 'http://127.0.0.1:%s/' % soc_port
 age_api = soc_url + 'age/'
 class_api = soc_url + 'class/'
-subclass_api = soc_url + 'subclass/'
+metadata_api = soc_url + 'metadata/'
 range_api = soc_url + 'range/'
 service_api = soc_url + 'service/'
 
@@ -24,8 +24,8 @@ def fetch_soc_age(max_seconds=600):
     return get_from_endpoint(api_endpoint)
 
 
-def add_soc_log(clss, subclass, service, message):
-    payload = {'time': time(), 'class': clss, 'subclass': subclass, 'message': message, 'service': service}
+def add_soc_log(clss, metadata, service, message):
+    payload = {'class': clss, 'metadata': metadata, 'message': message, 'service': service}
     response = requests.request(method='POST', url=soc_url, json=payload)
     return response.ok
 
@@ -35,8 +35,8 @@ def fetch_soc_class(class_name):
     return get_from_endpoint(api_endpoint)
 
 
-def fetch_soc_subclass(subclass):
-    api_endpoint = subclass_api + subclass
+def fetch_soc_metadata(metadata):
+    api_endpoint = metadata_api + metadata
     return get_from_endpoint(api_endpoint)
     
     

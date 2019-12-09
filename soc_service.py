@@ -9,7 +9,7 @@ from pprint import pprint
 
 app_port = 9999
 app = flask.Flask(__name__)
-soc_filename = 'stream_of_consciousness.json'
+soc_filename = 'soc.json'
 last_save = time()
 save_periodicity = 2
 
@@ -43,7 +43,7 @@ def validate_payload(payload):
     try:
         a = payload['time']
         a = payload['class']
-        a = payload['subclass']
+        a = payload['metadata']
         a = payload['message']
         a = payload['service']
         return True
@@ -52,6 +52,7 @@ def validate_payload(payload):
 
 
 def post_new_entry(payload):
+    payload['time'] = time()
     valid = validate_payload(payload)
     if valid:
         soc_log.append(payload)
@@ -84,10 +85,17 @@ def query_age(seconds):
     return flask.Response(json.dumps(payload), mimetype='application/json')
 
 
-@app.route('/class/<class_name>', methods=['GET'])
-def query_class(class_name):
+@app.route('/class/<keyword>', methods=['GET'])
+def query_class(keyword):
     # return SOC entries of a specified class
-    payload = [i for i in soc_log if i['class']==class_name]
+    payload = [i for i in soc_log if keyword in i['class']]
+    return flask.Response(json.dumps(payload), mimetype='application/json')
+
+
+@app.route('/metadata/<keyword>', methods=['GET'])
+def query_metadata(keyword):
+    # return SOC entries with specific metadata tags
+    payload = [i for i in soc_log if keyword in i['metadata']]
     return flask.Response(json.dumps(payload), mimetype='application/json')
     
 
