@@ -42,10 +42,9 @@ def save_soc_log():
 def validate_payload(payload):
     try:
         a = payload['time']
-        a = payload['class']
         a = payload['metadata']
         a = payload['message']
-        a = payload['service']
+        a = payload['origin']
         return True
     except:
         return False
@@ -56,10 +55,10 @@ def post_new_entry(payload):
     valid = validate_payload(payload)
     if valid:
         soc_log.append(payload)
-        #print('[NEW LOG]',payload)
+        print('[NEW LOG]\t\t',payload)
         # check age and save
         save_soc_log()
-        pprint(payload)
+        #pprint(payload)
         return 'Log accepted', 200
     else:
         return 'Log rejected', 400
@@ -82,13 +81,6 @@ def home():
 def query_age(seconds):
     # return SOC entries that are N seconds old or newer
     payload = filter_stream(max_seconds=seconds)
-    return flask.Response(json.dumps(payload), mimetype='application/json')
-
-
-@app.route('/class/<keyword>', methods=['GET'])
-def query_class(keyword):
-    # return SOC entries of a specified class
-    payload = [i for i in soc_log if keyword in i['class']]
     return flask.Response(json.dumps(payload), mimetype='application/json')
 
 

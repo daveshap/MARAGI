@@ -6,10 +6,10 @@ from time import time, sleep
 soc_port = 9999
 soc_url = 'http://127.0.0.1:%s/' % soc_port
 age_api = soc_url + 'age/'
-class_api = soc_url + 'class/'
 metadata_api = soc_url + 'metadata/'
 range_api = soc_url + 'range/'
-service_api = soc_url + 'service/'
+origin_api = soc_url + 'origin/'
+message_api = soc_url + 'message/'
 
 
 def get_from_endpoint(url):
@@ -24,15 +24,15 @@ def fetch_soc_age(max_seconds=600):
     return get_from_endpoint(api_endpoint)
 
 
-def add_soc_log(clss, metadata, service, message):
-    payload = {'class': clss, 'metadata': metadata, 'message': message, 'service': service}
+def fetch_soc_message(keyword):
+    api_endpoint = message_api + keyword
+    return get_from_endpoint(api_endpoint)
+    
+
+def add_soc_log(metadata, origin, message):
+    payload = {'metadata': metadata, 'message': message, 'origin': origin}
     response = requests.request(method='POST', url=soc_url, json=payload)
     return response.ok
-
-
-def fetch_soc_class(class_name):
-    api_endpoint = class_api + class_name
-    return get_from_endpoint(api_endpoint)
 
 
 def fetch_soc_metadata(metadata):
@@ -45,8 +45,8 @@ def fetch_soc_range(start, end):
     return get_from_endpoint(api_endpoint)
 
 
-def fetch_soc_service(service):
-    api_endpoint = service_api + service
+def fetch_soc_origin(origin):
+    api_endpoint = origin_api + origin
     return get_from_endpoint(api_endpoint)
 
 
