@@ -1,6 +1,6 @@
-# MARAGI Stream of Consciousness 
+# maragi 
 
-MARAGI 
+**maragi**
 - Microservices 
 - Architecture for 
 - Robotics and 
@@ -8,44 +8,51 @@ MARAGI
 - General 
 - Intelligence
 
-This server is the core MARAGI service. The Stream of Consciousness (SOC) is a REST API microservice. This service allows an arbitrary number of microservices to post messages to the SOC and to fetch messages from the SOC.
+# Server
 
-# Usage
+## Parameters
 
-There are two basic functions when interacting with the SOC: 
+| Parameter | Default | About |
+|---|---|---|---|
+| port | 9999 | Network port for maragi to accept messages on |
+| fields | ['time', 'uuid', 'service'] | Additional fields to instantiate SOC |
+| soc_file | `soc.json` | File name or full file path to SOC log |
 
-- Adding messages
-- Fetching messages
+## Methods
 
-You can use the MARAGI client to perform either action. This service records the SOC in a JSON file. 
+| Method | Usage |
+|---|---|
+| load_soc() | Attempt to load SOC log from file |
+| run() | Start maragi SOC server | 
 
-## Instantiate the SOC
-
-The MARAGI client talks to the core MARAGI service, the Stream of Consciousness using REST API
+## Usage 
 
 ```python
-import maragi_soc
-server = maragi_soc.Server()
-# optional, specify port and SOC file
-server = maragi_soc.Server(port=##, soc_file=##)
+import maragi
+server = maragi.Server(fields=['image', 'label'])
 server.run()
 ```
 
-## Communicate via the MARAGI Client
+# Client
 
-- [MARAGI Client on GitHub](https://github.com/daveshap/maragi_client)
-- [MARAGI Client on PyPI](https://pypi.org/project/maragi-client/)
+## Parameters
 
-The MARAGI Client is a simple REST client. You can use this client to communicate witht he SOC. See the above links for examples and usage of the client. 
+| Parameter | Default | About |
+|---|---|---|---|
+| ip | `127.0.0.1` | Network IP address of maragi server |
+| port | 9999 | Network port of maragi server |
 
-## Contribute and Collaborate 
+## Methods
 
-This is a nascent project. Please contribute your expertise to make it better! 
+| Method | Description |
+|---|---|
+| send(message=`message`) | Send a message to the maragi server |
+| fetch(field=`field`,keyword=`keyword`) | Fetch messages from the maragi server | 
 
-- [Find more MARAGI projects on GitHub](https://github.com/topics/maragi)
-
-# Installation
+## Usage 
 
 ```python
-pip install maragi-soc
+import maragi
+client = maragi.Client()
+client.get_fields()
 ```
