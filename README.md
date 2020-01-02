@@ -1,6 +1,5 @@
 # maragi 
 
-**maragi**
 - Microservices 
 - Architecture for 
 - Robotics and 
@@ -13,7 +12,7 @@
 ## Parameters
 
 | Parameter | Default | About |
-|---|---|---|---|
+|---|---|---|
 | port | 9999 | Network port for maragi to accept messages on |
 | fields | ['time', 'uuid', 'service'] | Additional fields to instantiate SOC |
 | soc_file | `soc.json` | File name or full file path to SOC log |
@@ -38,7 +37,7 @@ server.run()
 ## Parameters
 
 | Parameter | Default | About |
-|---|---|---|---|
+|---|---|---|
 | ip | `127.0.0.1` | Network IP address of maragi server |
 | port | 9999 | Network port of maragi server |
 
