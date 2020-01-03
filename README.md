@@ -41,33 +41,20 @@ Microservices can do anything, but each one should focus on achieving one goal. 
 
 As you can see, there are many domains of expertise that must work together in order to create a cohesive, intelligent machine. No single human could possibly have all the required knowledge and expertise. 
 
-## Stream of Consciousness
-
-Currently, our only model for strong intelligence is the human brain. Maragi is designed to approximate some of the most critical features of human intelligence, and by extension, human cognition. Intelligence 
-
 # Server
 
 The maragi server is the central nexus through which all other microservices can commmunicate. The server enables two primary types of interaction:
 
-- Adding new messages to the *stream of consciousness*
-- Fetching messages from the *stream of consciousness*
+- Adding new messages
+- Fetching messages 
 
-## Parameters
+All maragi microservices contribute to the whole via *messages*. Messages are analogous to *thoughts*, in that they contain information, ideas, memories, sensory information, facts, and so on. 
+Messages can contain different types of data. Some messages may contain images or audio data, where others contain sentences or paragraphs, and yet more may contain spatial information such as maps or world models. 
+The core function of the maragi server is to facilitate communication between all other microservices. The maragi server makes it easy for anyone to spin up a complex AGI or robotics system!
 
-| Parameter | Default | About |
-|---|---|---|
-| port | 9999 | Network port for maragi to accept messages on |
-| fields | ['time', 'uuid', 'service'] | Additional fields to instantiate SOC |
-| soc_file | `soc.json` | File name or full file path to SOC log |
+## Server Quick Start
 
-## Methods
-
-| Method | Usage |
-|---|---|
-| load_soc() | Attempt to load SOC log from file |
-| run() | Start maragi SOC server | 
-
-## Usage 
+Starting the maragi server takes only a couple lines of code. See! I told you it was easy! 
 
 ```python
 import maragi
@@ -77,24 +64,15 @@ server.run()
 
 # Client
 
-## Parameters
+The maragi client is a compact piece of code that allows you to quickly and easily interact with a maragi server. The client handles all the underlying communication so that you don't have to worry about it. 
+The client can be used in any other microservice to standardize the interaction with the maragi server. 
 
-| Parameter | Default | About |
-|---|---|---|
-| ip | `127.0.0.1` | Network IP address of maragi server |
-| port | 9999 | Network port of maragi server |
-
-## Methods
-
-| Method | Description |
-|---|---|
-| send(message=`message`) | Send a message to the maragi server |
-| fetch(field=`field`,keyword=`keyword`) | Fetch messages from the maragi server | 
-
-## Usage 
+## Client Quick Start
 
 ```python
 import maragi
-client = maragi.Client()
-client.get_fields()
+client = maragi.Client()  # instantiate the client
+message = {'service': 'demo_service'}  # compose a test message
+client.send(message)  # send the message to the server
+messages = client.fetch_all()  # retrieve all messages from the server
 ```
