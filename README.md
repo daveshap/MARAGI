@@ -29,7 +29,7 @@ With microservices, each component of the larger whole is a small, "fine-grained
 
 Microservices Architectures are ideally suited to large, complex systems. As robotics and artificial intelligence systems become more complex, MARAGI aims to democratize access to these technologies. 
 
-## Types of Microservices
+## Examples of Microservices
 
 Microservices can do anything, but each one should focus on achieving one goal. This specialization allows each microservice to be very useful and very robus. Here are some examples of microservices:
 
@@ -45,9 +45,13 @@ Microservices can do anything, but each one should focus on achieving one goal. 
   - This microservice would consume speech and chat information and propose verbal output responses.
 - **Motor Actuation Services**
   - This service would be in control of motor outputs. 
+- **Autobiographical Service**
+  - This service records interactions and experiences to be recalled later. Can be used to compile training data or remember conversations with people from the past. 
+- **Encyclopedia Service**
+  - This service adds knowledge and facts based on current context, allowing the maragi system access to useful information. 
 
 As you can see, there are many domains of expertise that must work together in order to create a cohesive, intelligent machine. No single human could possibly have all the required knowledge and expertise. 
-These six microservices could, in theory, create a walking and talking robot. 
+These six microservices could, in theory, create a walking and talking robot. Furthermore, as more microservices become available, maragi can be quickly and easily extended. 
 
 # Server
 
@@ -56,36 +60,31 @@ The maragi server is the central nexus through which all other microservices can
 - Adding new messages
 - Fetching messages 
 
-All maragi microservices contribute to the whole via *messages*. Messages are analogous to *thoughts*, in that they contain information, ideas, memories, sensory information, facts, and so on. 
-Messages can contain different types of data. Some messages may contain images or audio data, where others contain sentences or paragraphs, and yet more may contain spatial information such as maps or world models. 
-The core function of the maragi server is to facilitate communication between all other microservices. The maragi server makes it easy for anyone to spin up a complex AGI or robotics system!
-
 ## Server Quick Start
 
 Starting the maragi server takes only a couple lines of code. See! I told you it was easy! 
 
 ```python
 import maragi
-server = maragi.Server(fields=['image', 'label'])
-server.run()
+server = maragi.Server(fields=['image', 'label'])  # instantiate the server with two additional fields
+server.run()  # start the server
 ```
 
 ## Single Server
 
 It is possible to create an entire maragi system with a single maragi server. This would mean that all messages and microservices communicate with a single instance of the maragi server. There are several advantages and disadvantages to this design:
 
-- Simple design and planning
-- Single point of contact
-- Potentially more noise to filter
+- Simpler to design and deploy
+- More resource intensive
+- Generalized
 
 ## Multiple Servers
 
 Many microservices may not need to communicate with each other. Furthermore, some functions may benefit from highly specialized designs, such as vision or motor planning. Because of this, you may want to setup several individual maragi servers.
 
-- Increasingly complex to design
-- More points of contact to keep track of
-- More specialized, purpose-built
-- Less noise to sift through
+- More complex to design and deploy
+- Less resource intensive
+- Specialized
 
 # Client
 
