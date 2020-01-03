@@ -79,6 +79,7 @@ class Server():
             
         @app.route('/fields', methods=['GET'])
         # return list of fields current SOC is using
+        def get_fields():
             return flask.Response(json.dumps(self.fields), mimetype='application/json')
             
         app.run(host='0.0.0.0', port=self.port)
