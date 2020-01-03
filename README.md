@@ -21,10 +21,10 @@ There are three primary software application design patterns, or architectures:
 
 With microservices, each component of the larger whole is a small, "fine-grained" application. There are many advantages to this design paradigm:
 
-- Microservices are easy to design and understand, meaning that each microservice is easy to develop and maintain
-- Microservices have clearly defined boundaries and purposes, allowing for easy documentation and communication
-- Microservices can focus on specific domains of knowledge or expertise, allowing developers to specialize without having to understand the entire system
-- Microservices are highly portable, and can be packaged into virtual containers, rapidly deployed, and easily moved around
+- Easy to design and understand
+- Clearly defined boundaries and purposes
+- Highly specialized, focused on specific domains
+- Flexible and portable, easy to deploy and modify
 
 Microservices Architectures are ideally suited to large, complex systems. As robotics and artificial intelligence systems become more complex, MARAGI aims to democratize access to these technologies. 
 
@@ -32,14 +32,21 @@ Microservices Architectures are ideally suited to large, complex systems. As rob
 
 Microservices can do anything, but each one should focus on achieving one goal. This specialization allows each microservice to be very useful and very robus. Here are some examples of microservices:
 
-- **Camera microservice**. This service would take input data from camera(s) and package the information up to be added to the maragi server, so that other microservices can consume real-time camera data.
-- **Microphone microservice**. This service would serve an identical purpose, of taking information in from the outside world and adding it into the maragi system for other services.
-- **Object Detection**. This would be an ML microservice that consumes images from the maragi system, interprets the images, and adds labels/inferences to the maragi system.
-- **Automated Speech Recognition**. This service would consume audio data and publish inferences about speech.
-- **Conversation Modeling**. This microservice would consume speech and chat information and propose verbal output responses.
-- **Motor Actuation Services**. This service would be in control of motor outputs. 
+- **Camera microservice**
+ - This service would take input data from camera(s) and package the information up to be added to the maragi server, so that other microservices can consume real-time camera data.
+- **Microphone microservice**
+ - This service would serve an identical purpose, of taking information in from the outside world and adding it into the maragi system for other services.
+- **Object Detection**
+ - This would be an ML microservice that consumes images from the maragi system, interprets the images, and adds labels/inferences to the maragi system.
+- **Automated Speech Recognition**
+ - This service would consume audio data and publish inferences about speech.
+- **Conversation Modeling**
+ - This microservice would consume speech and chat information and propose verbal output responses.
+- **Motor Actuation Services**
+ - This service would be in control of motor outputs. 
 
 As you can see, there are many domains of expertise that must work together in order to create a cohesive, intelligent machine. No single human could possibly have all the required knowledge and expertise. 
+These six microservices could, in theory, create a walking and talking robot. 
 
 # Server
 
