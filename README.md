@@ -25,6 +25,7 @@ With microservices, each component of the larger whole is a small, "fine-grained
 - Clearly defined boundaries and purpose
 - Highly specialized, focused on specific domain
 - Flexible and portable, easy to deploy and modify
+- Language agnostic, use any programming language
 
 Microservices Architectures are ideally suited to large, complex systems. As robotics and artificial intelligence systems become more complex, MARAGI aims to democratize access to these technologies. 
 
