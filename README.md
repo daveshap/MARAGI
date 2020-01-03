@@ -22,8 +22,8 @@ There are three primary software application design patterns, or architectures:
 With microservices, each component of the larger whole is a small, "fine-grained" application. There are many advantages to this design paradigm:
 
 - Easy to design and understand
-- Clearly defined boundaries and purposes
-- Highly specialized, focused on specific domains
+- Clearly defined boundaries and purpose
+- Highly specialized, focused on specific domain
 - Flexible and portable, easy to deploy and modify
 
 Microservices Architectures are ideally suited to large, complex systems. As robotics and artificial intelligence systems become more complex, MARAGI aims to democratize access to these technologies. 
@@ -68,6 +68,23 @@ import maragi
 server = maragi.Server(fields=['image', 'label'])
 server.run()
 ```
+
+## Single Server
+
+It is possible to create an entire maragi system with a single maragi server. This would mean that all messages and microservices communicate with a single instance of the maragi server. There are several advantages and disadvantages to this design:
+
+- Simple design and planning
+- Single point of contact
+- Potentially more noise to filter
+
+## Multiple Servers
+
+Many microservices may not need to communicate with each other. Furthermore, some functions may benefit from highly specialized designs, such as vision or motor planning. Because of this, you may want to setup several individual maragi servers.
+
+- Increasingly complex to design
+- More points of contact to keep track of
+- More specialized, purpose-built
+- Less noise to sift through
 
 # Client
 
