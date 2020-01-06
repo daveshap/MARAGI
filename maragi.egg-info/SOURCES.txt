@@ -1,8 +1,0 @@
-README.md
-setup.py
-maragi/__init__.py
-maragi.egg-info/PKG-INFO
-maragi.egg-info/SOURCES.txt
-maragi.egg-info/dependency_links.txt
-maragi.egg-info/not-zip-safe
-maragi.egg-info/top_level.txt
