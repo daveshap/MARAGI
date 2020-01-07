@@ -66,9 +66,11 @@ Starting the maragi server takes only a couple lines of code. See! I told you it
 
 ```python
 import maragi
-server = maragi.Server(fields=['image', 'label'])  # instantiate the server with two additional fields
-server.run()  # start the server
+server = maragi.Server()
+server.run()
 ```
+
+That's it! It's that fast!
 
 ## Single Server
 
@@ -95,8 +97,31 @@ The client can be used in any other microservice to standardize the interaction 
 
 ```python
 import maragi
-client = maragi.Client()  # instantiate the client
-message = {'service': 'demo_service'}  # compose a test message
-client.send(message)  # send the message to the server
-messages = client.fetch_all()  # retrieve all messages from the server
+client = maragi.Client()
+service = 'test_service'  # this is a string
+data = ['this', 'is', 'data']  # any JSON serializable data
+metadata = 'list.strings.tokens.sentence'  # this is a string
+client.send(service=service, data=data, metadata=metadata)  # send the message to the server
+messages = client.get_all()  # retrieve all messages from the server
 ```
+
+## Client Fields
+
+### Service
+
+The `service` field is required. This records the originating service of a message, and is primarily for human-readability and diagnostic purposes. Consider that some MARAGI systems will be running dozens, hundreds, or even thousands of services. 
+
+### Data
+
+The `data` field must be JSON serializable. Beyond that, anything flies. You can pre-package it yourself if you like, into a string or leave it as a `list` or `dict` or whatever. If you're dealing with numpy arrays, you'll need to prepackage it.
+
+### Metadata
+
+The `metadata` field must be a string. This is a taxonomical description of the data. Remember, *metadata == data about the data*. The simplest and most obvious type of metadata is to describe the data type. Is the data a string? A list? An image? Audio?
+Furthermore, you can describe the origin, provenance, or predicate of a piece of data. Let's say you've made an inference about an image and you want to include a reference back to the image. 
+Now imagine that you have a speech recognition service that produces text strings but also includes information such as gender of the speaker, confidence, and other information. This is what the metadata field is for. 
+Here are some examples:
+
+- `string.sentence`
+- `image.numpy`
+- `image.labels.inference`
