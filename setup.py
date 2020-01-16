@@ -4,6 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
+"""
+cheat sheet reminder for myself because I'm dumb
+
+python setup.py sdist bdist_wheel
+python -m twine upload dist/*
+"""
+
+
 setup(name='maragi',
       version='0.2.2',
       description='Core MARAGI components; Server and Client',
