@@ -7,10 +7,12 @@
 
 ## Install
 
-```python
+```bash
 pip install maragi
 # or
 python -m pip install maragi
+# or 
+python3 -m pip install maragi
 ```
 
 ## Server
