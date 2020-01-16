@@ -1,4 +1,4 @@
-# MARAGI 
+# MARAGI Documentation
 
 - **M**icroservices 
 - **A**rchitecture for 
