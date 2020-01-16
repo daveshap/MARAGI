@@ -15,7 +15,7 @@ python -m twine upload dist/*
 setup(name='maragi',
       version='0.2.2',
       description='Microservices Architecture for Robotics and Artificial General Intelligence',
-      url='https://github.com/daveshap/maragi',
+      url='https://maragi.io',
       long_description=long_description,
       long_description_content_type="text/markdown",
       author='David Shapiro',
