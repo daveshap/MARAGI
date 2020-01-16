@@ -14,7 +14,7 @@ python -m twine upload dist/*
 
 setup(name='maragi',
       version='0.2.2',
-      description='Core MARAGI components; Server and Client',
+      description='Microservices Architecture for Robotics and Artificial General Intelligence',
       url='https://github.com/daveshap/maragi',
       long_description=long_description,
       long_description_content_type="text/markdown",
