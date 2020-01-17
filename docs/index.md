@@ -2,7 +2,7 @@
 title: MARAGI
 ---
 
-# MARAGI Documentation
+# Overview
 
 - **M**icroservices 
 - **A**rchitecture for 
@@ -46,52 +46,38 @@ message['service'] = 'test service'
 message['data'] = 'this is a test message'
 message['metadata'] = {'type': 'text/string'}
 
+# send the message
 client.send(message)
 # refresh your browser to see the message
+
+# fetch messages
+messages = client.fetch({})
 ```
 
 MARAGI server defaults to http://127.0.0.1:9999
 
-# Microservices Architecture
+# Microservices
 
-## Software Architectures
+Microservices in a nutshell:
 
-There are three primary software application design patterns, or architectures:
-
-- Monolithic Architecture
-- Service-Oriented Architecture (often abbreviated SOA)
-- Microservices Architecture
-
-## Advantages
-
-With microservices, each component of the larger whole is a small, "fine-grained" application. There are many advantages to this design paradigm:
-
-- Easy to design and understand
-- Clearly defined boundaries and purpose
-- Highly specialized, focused on specific domain
-- Flexible and portable, easy to deploy and modify
-- Language agnostic, use any programming language
-
-Microservices Architectures are ideally suited to large, complex systems. As robotics and artificial intelligence systems become more complex, MARAGI aims to democratize access to these technologies. 
-
-## Disadvantages
-
-Individual microservices are very easy to understand, but a *microservices architecture* requires thinking about your application a bit differently. Then again, human brains and cognitive architectures are intrinsically complicated.
-
-- The overall application can be more complicated
-- Linking services together can be unintuitive at first
-- Organizing your cognitive architecture with metadata is a novel concept
+- Tiny software programs
+- Completely self-contained
+- Talk to other programs with an API
 
 ## Examples
 
 | Service | Description |
 |---|---|
-| **Camera** | Takes images from a physical camera device and publishes them to the MARAGI server |
+| **Camera** | Takes images from physical camera(s) device and publishes them to the MARAGI server |
 | **Object Detection** | Consumes images from MARAGI server and performance inference, publishes what it "sees" back to the server |
 | **Autobiography** | Records and stores events so that they can be recalled later |
+| **Microphone** | Handles the audio data from a hardware microphone(s) |
+| **Speech Recognition** | Consumes audio data and spits out speech inferences |
+| **Conversation** | Consumes speech, chat, and conversation data and spits out responses | 
 
-# Cognitive Architectures
+## Contribute
 
-Cognitive architectures are proposed models of cognition and intelligence. MARAGI facilitates the rapid experimentation and tinkering with cognitive architectures and creates a sort of *plug-and-play* environment where your cognitive architecture can be rapidly expanded, modified, and upgraded. Cognitive architectures are *biomimetic* in nature. 
+- [More MARAGI services on GitHub](https://github.com/topics/maragi)
+- [More MARAGI packages on PyPI](https://pypi.org/search/?q=maragi)
 
-# Principles 
+Please consider writing your own microservices and publishing them on GitHub and/or PyPI! Please check out the [Microservices](https://maragi.io/pages/microservices.html)
