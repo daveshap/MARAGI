@@ -1,3 +1,7 @@
+---
+title: MARAGI Server Class
+---
+
 # Server Overview
 
 ## Quick Start
