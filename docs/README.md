@@ -1,3 +1,7 @@
+---
+title: MARAGI
+---
+
 # MARAGI Documentation
 
 - **M**icroservices 
@@ -48,11 +52,9 @@ client.send(message)
 
 MARAGI server defaults to http://127.0.0.1:9999
 
-# Concepts
+# Microservices Architecture
 
-## Microservices Architecture
-
-### Software Architectures
+## Software Architectures
 
 There are three primary software application design patterns, or architectures:
 
@@ -60,7 +62,7 @@ There are three primary software application design patterns, or architectures:
 - Service-Oriented Architecture (often abbreviated SOA)
 - Microservices Architecture
 
-### Advantages
+## Advantages
 
 With microservices, each component of the larger whole is a small, "fine-grained" application. There are many advantages to this design paradigm:
 
@@ -72,7 +74,7 @@ With microservices, each component of the larger whole is a small, "fine-grained
 
 Microservices Architectures are ideally suited to large, complex systems. As robotics and artificial intelligence systems become more complex, MARAGI aims to democratize access to these technologies. 
 
-### Disadvantages
+## Disadvantages
 
 Individual microservices are very easy to understand, but a *microservices architecture* requires thinking about your application a bit differently. Then again, human brains and cognitive architectures are intrinsically complicated.
 
@@ -80,7 +82,7 @@ Individual microservices are very easy to understand, but a *microservices archi
 - Linking services together can be unintuitive at first
 - Organizing your cognitive architecture with metadata is a novel concept
 
-### Examples
+## Examples
 
 | Service | Description |
 |---|---|
@@ -88,6 +90,8 @@ Individual microservices are very easy to understand, but a *microservices archi
 | **Object Detection** | Consumes images from MARAGI server and performance inference, publishes what it "sees" back to the server |
 | **Autobiography** | Records and stores events so that they can be recalled later |
 
-## Cognitive Architectures
+# Cognitive Architectures
 
 Cognitive architectures are proposed models of cognition and intelligence. MARAGI facilitates the rapid experimentation and tinkering with cognitive architectures and creates a sort of *plug-and-play* environment where your cognitive architecture can be rapidly expanded, modified, and upgraded. Cognitive architectures are *biomimetic* in nature. 
+
+# Principles 
