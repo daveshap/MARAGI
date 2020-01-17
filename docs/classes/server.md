@@ -1,4 +1,4 @@
-# Server
+# Server Overview
 
 ## Quick Start
 
@@ -23,3 +23,13 @@ Many microservices may not need to communicate with each other. Furthermore, som
 - More complex to design and deploy
 - Less resource intensive
 - Specialized
+
+# Class Methods
+
+## run()
+
+# Class Attributes
+
+## port
+
+## ip
