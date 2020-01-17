@@ -1,3 +1,7 @@
+---
+title: MARAGI Client Class
+---
+
 # Client
 
 ## Quick Start
