@@ -2,7 +2,7 @@
 title: MARAGI Server Class
 ---
 
-# Server Overview
+# Server
 
 ## Quick Start
 
@@ -28,11 +28,11 @@ Many microservices may not need to communicate with each other. Furthermore, som
 - Less resource intensive
 - Specialized
 
-# Class Methods
+# Methods
 
 ## run()
 
-# Class Attributes
+# Attributes
 
 ## port
 
