@@ -1,4 +1,4 @@
-# Maragi Client
+# Client
 
 ## Quick Start
 ```python
@@ -33,7 +33,7 @@ query = {'start':'<start time>', 'end':'<end time>', 'metadata':{'field':'to mat
 messages = client.fetch(query)
 ```
 
-# Client Attributes
+# Attributes
 
 
-# Client Methods
+# Methods
