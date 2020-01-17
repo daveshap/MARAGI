@@ -1,12 +1,5 @@
 # MARAGI Documentation
 
-| M | Microservices |
-| A | Architecture for |
-| R | Robotics and |
-| A | Artificial |
-| G | General | 
-| I | Intelligence |
-
 - **M**icroservices 
 - **A**rchitecture for 
 - **R**obotics and 
@@ -18,7 +11,39 @@ MARAGI is a system designed to make robotics and AGI accessible to everyone and 
 
 ## Installation
 
+[MARAGI on PyPI](https://pypi.org/project/maragi/)
+
+```python
+pip install maragi
+# or
+python -m pip install maragi
+```
+
 ## MARAGI in 30 Seconds
+
+Instantiate a server in Python
+
+```python
+import maragi
+server = maragi.Server()
+server.run()
+# go to http://127.0.0.1:9999
+```
+
+Create a client in a second instance of Python
+
+```python
+import maragi
+client = maragi.Client()
+
+# compose a message
+message = {}
+message['service'] = 'test service'
+message['data'] = 'this is a test message'
+message['metadata'] = {'type': 'text/string'}
+
+client.send(message)
+```
 
 # Concepts
 
