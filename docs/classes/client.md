@@ -1,4 +1,5 @@
-# Client Overview
+# Maragi Client
+
 ## Quick Start
 ```python
 from maragi import Client
