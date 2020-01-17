@@ -1,6 +1,6 @@
-[test relative link](test.md)
-[server](classes/server.md)
-[client](classes/client.md)
+- [test relative link](test.md)
+- [server](classes/server.md)
+- [client](classes/client.md)
 
 # MARAGI Documentation
 
