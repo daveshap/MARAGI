@@ -7,7 +7,7 @@
 - **G**eneral 
 - **I**ntelligence
 
-MARAGI is a system designed to make robotics and AGI accessible to everyone and to facilitate collaboration in the design, development, and research of AGI and robotics. 
+MARAGI is a system designed to make robotics and AGI accessible to everyone and to facilitate collaboration in the design, development, and research of AGI and robotics. MARAGI is a type of cognitive arcitecture.
 
 ## Installation
 
@@ -27,7 +27,7 @@ Instantiate a server in Python
 import maragi
 server = maragi.Server()
 server.run()
-# go to http://127.0.0.1:9999
+# go to http://127.0.0.1:9999 in a browser
 ```
 
 Create a client in a second instance of Python
@@ -43,7 +43,10 @@ message['data'] = 'this is a test message'
 message['metadata'] = {'type': 'text/string'}
 
 client.send(message)
+# refresh your browser to see the message
 ```
+
+MARAGI server defaults to http://127.0.0.1:9999
 
 # Concepts
 
@@ -84,3 +87,7 @@ Individual microservices are very easy to understand, but a *microservices archi
 | **Camera** | Takes images from a physical camera device and publishes them to the MARAGI server |
 | **Object Detection** | Consumes images from MARAGI server and performance inference, publishes what it "sees" back to the server |
 | **Autobiography** | Records and stores events so that they can be recalled later |
+
+## Cognitive Architectures
+
+Cognitive architectures are proposed models of cognition and intelligence. MARAGI facilitates the rapid experimentation and tinkering with cognitive architectures and creates a sort of *plug-and-play* environment where your cognitive architecture can be rapidly expanded, modified, and upgraded. Cognitive architectures are *biomimetic* in nature. 
