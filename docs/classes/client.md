@@ -37,7 +37,6 @@ query = {'start':'<start time>', 'end':'<end time>', 'metadata':{'field':'to mat
 messages = client.fetch(query)
 ```
 
-# Attributes
-
-
 # Methods
+
+# Attributes
