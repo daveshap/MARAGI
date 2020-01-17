@@ -1,3 +1,5 @@
+[test relative link](test.md)
+
 # MARAGI Documentation
 
 - **M**icroservices 
