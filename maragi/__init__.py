@@ -51,8 +51,15 @@ class Server():
 
 
     def html_head(self):
-        with open('./static/head.html', 'r') as infile:
-            html = infile.read()
+        html = """<html>
+<head>
+	<title>MARAGI Server</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+</head>
+
+<body>
+<h1>Welcome to MARAGI</h1>
+"""
         return html
 
 
