@@ -13,7 +13,7 @@ python -m twine upload dist/*
 
 
 setup(name='maragi',
-      version='0.2.3',
+      version='0.2.4',
       description='Microservices Architecture for Robotics and Artificial General Intelligence',
       url='https://maragi.io',
       long_description=long_description,
