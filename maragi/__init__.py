@@ -19,13 +19,15 @@ class Server():
 
     def validate_message(self, message):
         # check message against SOC fields
+        result = {}
         try:
             for field in self.fields:
-                a = message[field]
-            return True
+                result[field] = message[field]
+            return True, result
         except Exception as oops:
             print(oops)
-            return False
+            return False, str(oops)
+
         
     def filter_soc(self, query):
         # TODO
@@ -93,10 +95,12 @@ class Server():
             payload['time'] = time()
             payload['uuid'] = str(uuid4())
             print(payload)
-            if self.validate_message(payload):
-                self.soc_log.append(payload)
+            valid, result = self.validate_message(payload)
+            if (valid):
+                self.soc_log.append(result)
                 return 'Log accepted and saved', 200
             else:
+                print(result)
                 return 'Log rejected, missing field', 402
 
         @app.route('/api/v1/fetch', methods=['POST'])
@@ -115,19 +119,29 @@ class Client():
         self.url = 'http://%s:%s' % (ip,port)
         self.api_new = self.url + '/api/%s/new' % api
         self.api_fetch = self.url + '/api/%s/fetch' % api
+        self.default_query = {}
+        self.default_metadata = {}
+        self.service_name = '<service name>'
         # TODO HTTPS support might come eventually, if there's a need
+        # TODO multi-server support
+        #self.servers = [{'ip': ip, 'port': port, 'api'=api]
     
     
     def send(self, payload):
         # add a new message to the SOC
-        # payload requires fields: service, metadata, data
+        if 'metadata' not in payload:
+            payload['metadata'] = self.default_metadata
+        if 'service' not in payload:
+            payload['service'] = self.service_name
         response = requests.request(method='POST', url=self.api_new, json=payload)
+        self.last_send = time()
         print(response.url, response.ok, response.status_code)
         return response
     
     
-    def fetch(self, query):
+    def fetch(self, query=self.default_query):
         # send a search query and get the results
         response = requests.request(method='POST', url=self.api_fetch, json=query)
+        self.last_fetch = time()
         print(response.url, response.ok, response.status_code)
         return response.json()
