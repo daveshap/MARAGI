@@ -1,5 +1,5 @@
 ---
-title: MARAGI Client Class
+title: Client Class
 ---
 
 # Client
