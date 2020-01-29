@@ -30,10 +30,8 @@ Many microservices may not need to communicate with each other. Furthermore, som
 
 # Methods
 
-## run()
+`under construction`
 
 # Attributes
 
-## port
-
-## ip
+`under construction`
