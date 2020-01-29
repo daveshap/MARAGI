@@ -11,7 +11,7 @@ title: MARAGI
 - **G**eneral 
 - **I**ntelligence
 
-MARAGI is a system designed to make robotics and AGI accessible to everyone and to facilitate collaboration in the design, development, and research of AGI and robotics. MARAGI is a type of cognitive arcitecture.
+MARAGI is a system designed to make robotics and AGI accessible to everyone and to facilitate collaboration in the design, development, and research of AGI and robotics. MARAGI is a type of cognitive arcitecture, a framework that allows you to easily lay the plumbing and wiring to experiment with cognitive microservices. 
 
 ## Installation
 
