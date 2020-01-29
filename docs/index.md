@@ -25,7 +25,9 @@ python -m pip install maragi
 
 ## MARAGI in 30 Seconds
 
-Instantiate a server in Python
+### Server
+
+For more info, check out the [Server Documentation](https://maragi.io/classes/server.html) page on this site. Instantiate a server in Python
 
 ```python
 import maragi
@@ -34,7 +36,9 @@ server.run()
 # go to http://127.0.0.1:9999 in a browser
 ```
 
-Create a client in a second instance of Python
+### Client
+
+For more info, check out the [Client Documentation](https://maragi.io/classes/client.html) page on this site. Create a client in a second instance of Python
 
 ```python
 import maragi
@@ -61,7 +65,7 @@ MARAGI server defaults to http://127.0.0.1:9999
 - [More MARAGI services on GitHub](https://github.com/topics/maragi)
 - [More MARAGI packages on PyPI](https://pypi.org/search/?q=maragi)
 
-Please consider writing your own microservices and publishing them on GitHub and/or PyPI! Please check out the [Microservices](https://maragi.io/pages/microservices.html)
+Please consider writing your own microservices and publishing them on GitHub and/or PyPI! Please check out the [Microservices](https://maragi.io/pages/microservices.html) page on this site. 
 
 # Mission
 
