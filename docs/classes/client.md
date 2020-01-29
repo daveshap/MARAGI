@@ -1,5 +1,5 @@
 ---
-title: Client Class
+title: Client
 ---
 
 # Client
