@@ -1,5 +1,5 @@
 ---
-title: MARAGI Server Class
+title: Server
 ---
 
 # Server
